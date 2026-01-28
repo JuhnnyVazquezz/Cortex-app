@@ -1,0 +1,8 @@
+pasos para conectar flutter con teléfono 
+Hay que dejar en línea el sistema de cortex que está en c:cortex_backend
+y corremos la linea uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+1.- hacer la computadora hotspot y conectarla a la red.
+2- ingresar a depuracion inalambrica 
+3.- ejecutar los comandos en cmd: adb connect 192.168.137.153:xxxx
+4.-Listo.

@@ -1,0 +1,33 @@
+name: cortex_app
+description: "Cortex Operativo"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ICONOS
+  cupertino_icons: ^1.0.2
+
+  # CÁMARA
+  image_picker: ^1.0.4
+  image_cropper: ^5.0.1
+
+  # CONEXIÓN
+  http: ^1.1.0
+
+  # --- LA SOLUCIÓN ---
+  # La versión 12 corrige el error interno de "geolocator_android"
+  geolocator: ^12.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
