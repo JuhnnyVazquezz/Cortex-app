@@ -25,7 +25,7 @@ class _VisionScreenState extends State<VisionScreen>
   Map<String, dynamic>? _resultado;
 
   // ⚠️ IP DEL HOTSPOT (CORREGIDA AL ENLACE ACTIVO)
-  String baseUrl = "http://192.168.248.28:8000/api/v1";
+  String baseUrl = "http://10.20.36.28:8000/api/v1";
 
   // --- PALETA DE COLORES TÁCTICA (CÓRTEX THEME) ---
   final Color kBgDark = Color(0xFF0B1120); // Fondo Ultra Oscuro
@@ -151,7 +151,12 @@ class _VisionScreenState extends State<VisionScreen>
                   'vehiculo': h['vehiculo'],
                   'fecha': h['fecha'],
                   'info_extra': 'REPORTE VINCULADO',
-                  'narrativa': h['narrativa']
+                  'narrativa': h['narrativa'],
+
+                  // 🔥 CAPTURA CRÍTICA 🔥
+                  // Ahora el 'id_incidente' que viene del Python YA ES el Folio (CTX...)
+                  'id_incidente': h['id_incidente'],
+                  'folio': h['folio']
                 };
               }).toList();
             } else {
@@ -162,14 +167,18 @@ class _VisionScreenState extends State<VisionScreen>
                 'vehiculo': data['data']['vehiculo'],
                 'fecha': data['data']['fecha'],
                 'info_extra': 'FOLIO: ${data['data']['folio']}',
-                'narrativa': data['data']['narrativa']
+                'narrativa': data['data']['narrativa'],
+
+                // 🔥 CAPTURA CRÍTICA 🔥
+                // Ahora el 'id_incidente' que viene del Python YA ES el Folio (CTX...)
+                'id_incidente': data['id_incidente'],
+                'folio': data['folio']
               });
             }
 
             _resultado = {
               'existe_registro': true,
-              'placa_detectada': data['data']
-                  ['placa'], // Usamos la placa del primer dato
+              'placa_detectada': data['data']['placa'],
               'alertas': listaAlertas
             };
           } else {

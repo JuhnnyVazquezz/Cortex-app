@@ -16,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   // ⚠️ CORRECCIÓN TÁCTICA:
   // Al usar 'adb reverse', el celular DEBE apuntar a localhost (127.0.0.1)
-  final String baseUrl = "http://192.168.248.28:8000";
+  final String baseUrl = "http://10.20.36.28:8000";
 
   // Colores Tácticos
   final Color kDarkBg = Color(0xFF0B1120);

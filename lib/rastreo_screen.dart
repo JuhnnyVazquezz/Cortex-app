@@ -24,7 +24,7 @@ class _RastreoScreenState extends State<RastreoScreen>
   final String _oficialId = "OFICIAL_MOVIL_01";
 
 // IP exacta del Hotspot
-  final String _serverUrl = "http://192.168.248.28:8000/api/v1/ubicacion/";
+  final String _serverUrl = "http://10.20.36.28:8000/api/v1/ubicacion/";
   @override
   void initState() {
     super.initState();
